@@ -5,9 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>구르미로 홈페이지</title>
     <style>
-        /* CSS 스타일링 (이미지와 유사하게) */
+        /* 기본 배경 설정 */
         body {
-            font-family: 'Malgun Gothic', '맑은 고딕', sans-serif;
 
             /* ===== 배경 이미지 설정 ===== */
             background-image: url('back1.png');
@@ -17,91 +16,88 @@
             background-repeat: no-repeat;    /* 이미지 반복 방지 */
             background-attachment: fixed;    /* 스크롤 시 배경 이미지 고정 */
             /* ========================= */
-
-
-            background-color: #f0f0f0; /* 배경색 설정 */
+            
+            margin: 0;
+            padding: 0;
+            background-color: #f0f2f5; /* 연한 그레이 배경 */
+            font-family: 'Pretendard', -apple-system, sans-serif;
             display: flex;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
-            margin: 0;
-            color: #333; /* 기본 글자색 (배경 위에 잘 보이도록) */
         }
-        .container {
-            background-color:rgba(255, 255, 255, 0.2); /* 내용 배경색 */
-            padding: 40px 60px;
-            /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
-            max-width: 800px;
-            width: 90%;
-            text-align: left;
+
+        /* 전체 컨테이너 */
+        .landing-container {
+            width: 100%;
+            max-width: 420px; /* 모바일 적당 너비 */
+            padding: 20px;
+            text-align: center;
         }
-        .message {
-            font-size: 1.1em;
-            margin-bottom: 25px;
-            line-height: 1.6;
+
+        /* 프로필 영역 */
+        .profile-section h1 {
+            font-size: 1.5rem;
+            color: #1a1a1a;
+            margin-bottom: 8px;
         }
+        .profile-section p {
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 30px;
+        }
+
+        /* 링크 버튼 그룹 */
+        .link-group {
+            display: flex;
+            flex-direction: column;
+            gap: 15px; /* 버튼 사이 간격 */
+        }
+
+        /* 개별 버튼 스타일 */
         .link-item {
-            font-size: 1.05em;
-            margin-bottom: 15px;
+            display: block;
+            background: rgba(255, 255, 255, 0.4);
+            /* 2. 뒷배경 흐림 효과 (유리 느낌의 핵심) */
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px); /* 사파리 브라우저 호환성 */
+            padding: 18px;
+            border-radius: 15px;
+            text-decoration: none;
+            color: #333;
+            font-weight: 600;
+            /* 4. 부드러운 그림자 */
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.07);
+            transition: all 0.2s ease-in-out;
+            /* 3. 유리의 얇은 테두리 느낌 추가 */
+    border: 1px solid rgba(255, 255, 255, 0.3);
         }
-        .link-item a {
-            color: #007bff; /* 파란색 링크 */
-            text-decoration: none; /* 밑줄 제거 */
-            transition: color 0.3s;
-        }
-        .link-item a:hover {
-            color: #0056b3; /* 마우스 오버 시 색상 */
-            text-decoration: underline; /* 마우스 오버 시 밑줄 표시 */
-        }
-        .link-label {
-            display: inline-block;
-            width: 300px; /* 라벨 너비 고정 */
-        }
-        .link-sub {
-            font-size: 0.9em;
-            margin-top: 20px;
-            padding-top: 15px;
-            border-top: 1px solid #eee;
+
+        /* 마우스 호버 효과 */
+        .link-item:hover {
+            transform: translateY(-3px); /* 위로 살짝 들림 */
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            background: #fafafa;
+            border-color: #ddd;
         }
     </style>
 </head>
 <body>
 
-<div class="container">
-
-    <p class="message">
-        구르미로 홈페이지를 방문해주셔서 감사합니다.<br>
-        
-        각각의 페이지 주소를 안내해드리니 이곳으로 방문해주시기 바랍니다.
-    </p>
-
-    <hr>
-
-    <div class="link-item">
-        <span class="link-label">구르미로 유튜브 채널</span>
-        <a href="https://www.youtube.com/@gurmiro" target="_blank">https://www.youtube.com/@gurmiro</a>
+<div class="landing-container">
+    <div class="profile-section">
+        <h1>☁️ 구르미로</h1>
+        <p>구르미로 홈페이지를 방문해주셔서 감사합니다.<br>
+           각각의 페이지 주소를 안내해드리니 이곳으로 방문해주시기 바랍니다.</p>
     </div>
 
-    <div class="link-item">
-        <span class="link-label">구르미로 인스타그램</span>
-        <a href="https://www.instagram.com/gurmiro_/" target="_blank">https://www.instagram.com/gurmiro_/</a>
+    <div class="link-group">
+        <a href="https://www.youtube.com/@gurmiro" class="link-item">📺 구르미로 유튜브 채널</a>
+        <a href="https://www.instagram.com/gurmiro_/" class="link-item">📸 구르미로 인스타그램</a>
+        <a href="https://smartstore.naver.com/gurmiro" class="link-item">🛍️ 구르미로 네이버 스토어</a>
+        <a href="https://experiences.myrealtrip.com/products/3828574" class="link-item">🚁 구르미로 제주도 드론관광 프로그램</a>
+        <a href="https://blog.naver.com/beebeam/223548537878" class="link-item">✍️ 제주 디지털배움터 드론 무료교육 소개</a>
     </div>
-
-    <div class="link-item">
-        <span class="link-label">구르미로 네이버 스토어</span>
-        <a href="https://smartstore.naver.com/gurmiro" target="_blank">https://smartstore.naver.com/gurmiro</a>
-    </div>
-
-    <div class="link-item">
-        <span class="link-label">구르미로 제주도 드론관광 프로그램</span>
-        <a href="https://experiences.myrealtrip.com/products/3828574" target="_blank">https://experiences.myrealtrip.com/products/3828574</a>
-    </div>
-
-    <div class="link-item">
-        <span class="link-label">제주 디지털배움터 드론 무료교육 소개</span>
-        <a href="https://blog.naver.com/beebeam/223548537878" target="_blank">https://blog.naver.com/beebeam/223548537878</a>
-    </div>
-
 </div>
 
 </body>
